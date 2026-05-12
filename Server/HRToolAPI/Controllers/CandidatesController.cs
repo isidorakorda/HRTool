@@ -1,6 +1,5 @@
 ﻿using HRToolAPI.DTOs.Requests;
 using HRToolAPI.DTOs.Responses;
-using HRToolAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HRToolAPI.Services.IServices;
@@ -71,7 +70,6 @@ namespace HRToolAPI.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-
 
         [HttpDelete("{id:guid}")]
         public async Task<IActionResult> DeleteCandidate(Guid id)
