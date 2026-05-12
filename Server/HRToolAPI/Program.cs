@@ -1,5 +1,6 @@
 using HRToolAPI.Data;
 using HRToolAPI.Services;
+using HRToolAPI.Services.IServices;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,8 +20,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
     ?? throw new InvalidOperationException("Connection string 'ApplicationDbContext' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseNpgsql(connectionString));
-builder.Services.AddTransient<CandidatesService>();
-builder.Services.AddTransient<SkillsService>();
+builder.Services.AddScoped<ICandidatesService, CandidatesService>();
+builder.Services.AddScoped<ISkillsService, SkillsService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

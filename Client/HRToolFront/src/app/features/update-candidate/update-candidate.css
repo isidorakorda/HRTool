@@ -12,6 +12,7 @@
 }
 
 .modal-container {
+    font-family: "Gabarito";
     background: white;
     padding: 2.5rem;
     border-radius: 20px;
@@ -31,14 +32,6 @@
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.modal-container {
-    padding: 2rem;
-    font-family: "Gabarito", sans-serif;
-    max-width: 600px;
-    background: white;
-    border-radius: 20px;
 }
 
 .modal-header h2 {
@@ -94,8 +87,13 @@
     gap: 1rem;
 }
 
+button {
+
+    font-family: "Gabarito";
+}
+
 .save-btn {
-    background-color: #4a69bd;
+    background-color: #7490dd;
     color: white;
     border: none;
     padding: 0.7rem 1.5rem;
