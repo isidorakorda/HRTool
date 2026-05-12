@@ -1,6 +1,22 @@
 @HRToolAPI_HostAddress = http://localhost:5250
 
-GET {{HRToolAPI_HostAddress}}/weatherforecast/
+### Get All Candidates
+GET {{HRToolAPI_HostAddress}}/api/candidates
 Accept: application/json
 
-###
+### Create a Candidate
+POST {{HRToolAPI_HostAddress}}/api/candidates
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "dateOfBirth": "1995-05-15",
+  "phone": "555-0199",
+  "email": "jane.doe@example.com",
+  "skillIds": [
+    "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  ]
+}
+
+### Delete a Candidate (Replace with a real Guid)
+DELETE {{HRToolAPI_HostAddress}}/api/candidates/00000000-0000-0000-0000-000000000000

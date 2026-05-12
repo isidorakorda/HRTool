@@ -1,0 +1,110 @@
+.manage-skills-container {
+    display: flex;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    font-family: "Gabarito", sans-serif;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-section,
+.list-section {
+    width: 450px;
+    padding: 2.5rem;
+    border: 1px solid #6e6e6e;
+    border-radius: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.list-section {
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.error {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+    color: #ff6464;
+}
+
+input {
+    padding: 1rem;
+    border: 1px solid #6e6e6e;
+    border-radius: 20px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 20px;
+    border: none;
+    background: #c6d9ff;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.skill-list {
+    margin-top: 1.5rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    background: #fff;
+    font-size: 1.25rem;
+}
+
+.delete-btn {
+    width: auto;
+    padding: 6px 14px;
+    background-color: #ff6464;
+    color: white;
+    font-family: "Gabarito";
+    font-size: 1rem;
+    font-weight: 300;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.skill-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.skill-list::-webkit-scrollbar-thumb {
+    background: #c6d9ff;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: 400;
+}

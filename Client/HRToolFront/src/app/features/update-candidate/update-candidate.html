@@ -1,0 +1,26 @@
+<div class="modal-container">
+    <header class="modal-header">
+        <h2>Update Candidate</h2>
+    </header>
+
+    <div class="modal-body">
+
+        <section class="skills-manager">
+            <h3>Manage Skills</h3>
+            <div class="skills-grid">
+                <div *ngFor="let skill of allSkills" class="skill-checkbox">
+                    <label [class.active]="selectedSkillIds.includes(skill.id)">
+                        <input type="checkbox" [checked]="selectedSkillIds.includes(skill.id)"
+                            (change)="toggleSkill(skill.id)">
+                        {{ skill.name }}
+                    </label>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="modal-footer">
+        <button class="cancel-btn" (click)="onCancel()">Cancel</button>
+        <button class="save-btn" (click)='onSave()'>Save Changes</button>
+    </footer>
+</div>

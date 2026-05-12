@@ -1,0 +1,53 @@
+<div class="manage-container">
+    <div class="form-section">
+        <h2>Create User</h2>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-grid">
+                <div class="column-left">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" formControlName="name" placeholder="Full Name" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input id="dob" type="date" formControlName="dateOfBirth" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input id="phone" type="tel" formControlName="phone" placeholder="e.g. 061234567" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input id="email" type="email" formControlName="email" placeholder="email@example.com" />
+                    </div>
+                </div>
+
+                <div class="column-right">
+                    <div class="form-group">
+                        <label>Skills Selection</label>
+                        <div class="skills-checkbox-container">
+                            <div *ngFor="let skill of skills" class="checkbox-item">
+                                <input type="checkbox" [id]="'skill-' + skill.id"
+                                    (change)="onSkillChange(skill.id, $event)" />
+                                <label [for]="'skill-' + skill.id">{{ skill.name }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <div *ngIf="selectedSkillIds.length === 0 && userForm.touched" class="error">
+                    <small>Please select at least one skill.</small>
+                </div>
+                <button type="submit" [disabled]="userForm.invalid || selectedSkillIds.length === 0">
+                    Create User
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
