@@ -1,6 +1,6 @@
 ﻿using HRToolAPI.DTOs.Requests;
 using HRToolAPI.DTOs.Responses;
-using HRToolAPI.Services;
+using HRToolAPI.Services.IServices;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRToolAPI.Controllers
@@ -9,9 +9,9 @@ namespace HRToolAPI.Controllers
     [ApiController]
     public class SkillsController : ControllerBase
     {
-        private readonly SkillsService _skillsService;
+        private readonly ISkillsService _skillsService;
 
-        public SkillsController(SkillsService skillsService)
+        public SkillsController(ISkillsService skillsService)
         {
             _skillsService = skillsService;
         }

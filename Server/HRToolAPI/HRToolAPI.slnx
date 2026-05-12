@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="../HRToolAPITest/HRToolAPITest.csproj" Id="5ee432ff-0609-4cf7-a0bf-63450f32aa70" />
   <Project Path="HRToolAPI.csproj" />
 </Solution>

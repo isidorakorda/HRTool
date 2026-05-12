@@ -2,11 +2,12 @@
 using HRToolAPI.DTOs.Requests;
 using HRToolAPI.DTOs.Responses;
 using HRToolAPI.Models;
+using HRToolAPI.Services.IServices;
 using Microsoft.EntityFrameworkCore;
 
 namespace HRToolAPI.Services
 {
-    public class CandidatesService
+    public class CandidatesService : ICandidatesService
     {
         private readonly ApplicationDbContext _context;
         public CandidatesService(ApplicationDbContext context)
@@ -14,7 +15,7 @@ namespace HRToolAPI.Services
             _context = context;
         }
 
-        public async Task<List<CandidateDTO>> GetAll(string? name, List<Guid>? skillIds)
+        public async Task<List<CandidateDTO>> GetAllCandidates(string? name, List<Guid>? skillIds)
         {
             var query = _context.Candidates.AsQueryable();
             if (!string.IsNullOrWhiteSpace(name))

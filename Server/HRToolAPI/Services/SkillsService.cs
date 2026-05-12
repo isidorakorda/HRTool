@@ -2,11 +2,12 @@
 using HRToolAPI.DTOs.Requests;
 using HRToolAPI.DTOs.Responses;
 using HRToolAPI.Models;
+using HRToolAPI.Services.IServices;
 using Microsoft.EntityFrameworkCore;
 
 namespace HRToolAPI.Services
 {
-    public class SkillsService
+    public class SkillsService : ISkillsService
     {
         private readonly ApplicationDbContext _context;
 

@@ -3,6 +3,7 @@ using HRToolAPI.DTOs.Responses;
 using HRToolAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using HRToolAPI.Services.IServices;
 
 namespace HRToolAPI.Controllers
 {
@@ -10,18 +11,18 @@ namespace HRToolAPI.Controllers
     [ApiController]
     public class CandidatesController : ControllerBase
     {
-        private readonly CandidatesService _candidateService;
-        public CandidatesController(CandidatesService candidateService)
+        private readonly ICandidatesService _candidateService;
+        public CandidatesController(ICandidatesService candidateService)
         {
             _candidateService = candidateService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<CandidateDTO>>> GetAll([FromQuery] string? name, [FromQuery] List<Guid>? skillIds)
+        public async Task<ActionResult<List<CandidateDTO>>> GetAllCandidates([FromQuery] string? name, [FromQuery] List<Guid>? skillIds)
         {
             try
             {
-                List<CandidateDTO> candidates = await _candidateService.GetAll(name, skillIds);
+                List<CandidateDTO> candidates = await _candidateService.GetAllCandidates(name, skillIds);
                 if (candidates == null || candidates.Count == 0)
                 {
                     return NoContent();
