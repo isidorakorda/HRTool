@@ -4,9 +4,9 @@ The most demanding part was the search and filtering. I designed it so that the 
 
 ---
 
-<img src="assets/view-candidates.png" width="50%" >
-<img src="assets/update-candidate.png" width="50%" >
-<img src="assets/create-candidate.png" width="50%" >
+<img src="assets/view-candidates.png">
+<img src="assets/update-candidate.png">
+<img src="assets/create-candidate.png">
 
 --- 
 
