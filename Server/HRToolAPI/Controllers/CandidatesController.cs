@@ -30,7 +30,7 @@ namespace HRToolAPI.Controllers
             }
             catch (Exception)
             {
-                return StatusCode(500, "An Internal Server Has Occured");
+                return StatusCode(500, "An Internal Server Error Has Occured");
             }
         }
 
